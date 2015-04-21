@@ -1352,7 +1352,7 @@ public final class Spdy3ConnectionTest {
    * creates more work for the watchdog and waits for that work to be executed. When it is, we know
    * work that preceded this call is complete.
    */
-  private void awaitWatchdogIdle() throws InterruptedException {
+  private void awaitWatchdogIdle() throws InterruptedException, IOException {
     final CountDownLatch latch = new CountDownLatch(1);
     AsyncTimeout watchdogJob = new AsyncTimeout() {
       @Override protected void timedOut() {
